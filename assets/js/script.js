@@ -14,7 +14,7 @@ $(() => {
                             <button class="btn-modal btn btn-success my-1" data-id="${producto.id}" data-bs-toggle="modal" data-bs-target="#modalProducto">Ver Detalle</button>
                         </div>
                     </div>
-                </div>
+            </div>
         `;
             //<button onclick="mostrarModal('${producto.id}')" class="btn btn-success" data-id="${producto.id}" data-bs-toggle="modal" data-bs-target="#modalProducto">Modal producto</button>
         });
@@ -104,12 +104,13 @@ function mostrarPokemon(pokemon) {
     contenedorCard.find(".cardPokemon--title").text(pokemon.name);
     contenedorCard.find(".cardPokemon--peso").text(pokemon.weight);
     contenedorCard.find(".cardPokemon--estatura").text(pokemon.height);
-    /* types = [] => type.name */
 
     let acumulador = "";
     pokemon.types.forEach((type) => {
-        console.log(type);
         acumulador += `<li>${type.type.name}</li>`;
     });
     contenedorCard.find(".lista--tipos").html(acumulador);
+    $("#sectionDataPokemon").removeClass("d-none");
+
+    //document.getElementById("sectionDataPokemon").style.display = "block";
 }

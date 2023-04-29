@@ -6,11 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script defer src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script defer src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <script defer src="./assets/js/imagenes.js"></script>
+    <script defer src="./assets/js/index.js"></script>
+    <script defer src="./assets/js/productos.js"></script>
     <script defer src="./assets/js/script.js"></script>
     <title>Proyecto bootstrap</title>
 </head>
@@ -19,7 +23,7 @@
     <!-- INICIO NAVBAR -->
 
     <header>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top" id="navbar">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -46,13 +50,13 @@
         <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://picsum.photos/id/684/800/400" class="d-block w-100" alt="...">
+                    <img src="https://picsum.photos/id/684/1500/1300" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://picsum.photos/id/684/800/400" class="d-block w-100" alt="...">
+                    <img src="https://picsum.photos/id/685/1500/1300" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://picsum.photos/id/684/800/400" class="d-block w-100" alt="...">
+                    <img src="https://picsum.photos/id/686/1500/1300" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
@@ -82,9 +86,13 @@
 
         <!-- INICIO SECTION CONSUMO API -->
         <section id="busquedaPokemones" class="py-5">
-            <h2 class="text-center">Busca a tu pokémon.</h2>
+            <h2 class="text-center" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top"
+                data-bs-content="Este formulario consume un servicio externo, puede que falle algunas veces.">Busca a tu
+                pokémon.</h2>
             <form class="w-50 mx-auto">
-                <label for="pokemonName" class="form-label">Nombre/id</label>
+                <label for="pokemonName" class="form-label" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    data-bs-title="Puedes buscar el Pokémon por su número de Pokédex o su nombre.">Nombre/id</label>
                 <input type="text" name="pokemonName" id="pokemonName" class="form-control" required
                     placeholder="pikachu">
                 <div class="d-flex justify-content-center">
@@ -93,7 +101,7 @@
 
             </form>
 
-            <section class="d-flex justify-content-center py-5">
+            <section class="d-flex justify-content-center py-5 d-none" id="sectionDataPokemon">
                 <div class="card mb-3 cardPokemon" style="max-width: 70%;">
                     <div class="row g-0">
                         <div class="col-md-5">
@@ -120,6 +128,9 @@
 
         <!-- FIN SECTION CONSUMO API -->
     </main>
+    <footer class="bg-dark">
+        <p class="text-center py-3 text-light">Sitio desarrollo por ...</p>
+    </footer>
 
 
 
